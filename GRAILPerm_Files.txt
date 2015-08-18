@@ -1,0 +1,46 @@
+Permutation Software
+---------------------
+GRAILPermGeno.py   Generates permuted genotypes using GRAILPerm data files
+GRAILperm.R        R Script automates permutations from GRAILPermGeno.py.  Requires R/qtl
+
+Analysis Software
+---------------------
+OutParser.py       Generates locus-specific P-values
+CombineMaps.py     For one data set, samples output QTL maps for best P-values
+
+
+
+
+GRAILPerm Data Files
+------------------
+ailfam.txt         Parent IDs and offspring number, sex making up the simulated population
+  Format:  each row gives parameters to create a type of offspring.  First two columns
+           are parent IDs.  Third column is number of offspring to make for those parents
+           of the sex in column four.  An easy way to use this is to always allow column
+           three to equal one and list each offspring on a line.
+ailmap.txt         marker positions for AIL markers in cM
+  Format: each row is a chromosome.  Positions are in marker order
+ailhaplo.txt       haplotype structure of final generation parents
+  Format: each column is a parent.  First half column is one strand, second half another
+markerphyspos.txt  physical positions of markers.  
+  Format: Same as markerpos.txt, but with added column of physical positions
+
+
+Mapping files are included for AIL hippocampus weight, coat color, and body weight.  Hippocampus also
+includes a shortened version of the GRAILPerm data files to generate populations permuting only the
+animals for which there are hippocampus weight observations in the original data (679 animals) and
+for regenerating the subsampling by family and random data removal.
+
+Mapping Data Files for R/qtl, "karl" format
+-------------------------------------------
+pheno.dat          original phenotypes for AIL data
+geno.txt           original AIL genotypes
+chr.dat            chromosome for each marker
+markerpos.txt      position for each marker in cM
+mnames.txt         name for each marker
+pnames.txt         name for each phenotype
+
+
+
+
+
